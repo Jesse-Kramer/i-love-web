@@ -2,7 +2,7 @@
     <nav>
         <ul>
             <li><slot name="header-left"/></li>
-            <li><slot name="header-main"/></li>
+            <li><h1><slot name="header-main"/></h1></li>
             <li><slot name="header-right"/></li>
         </ul>
     </nav>
@@ -10,7 +10,7 @@
 </header>
 
 <style>
-header{
+header {
     font-size: 10px;
 
     --header-main: 10em;
@@ -19,17 +19,17 @@ header{
     margin: 1.5em 0 1.5em 0;
 }
 
-nav{
+nav {
     margin-bottom: 1.5em;
 }
 
-a{
+a {
     color: inherit;
     font-size: inherit;
     text-decoration: inherit;
 }
     
-ul{
+ul {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -37,17 +37,17 @@ ul{
     justify-content: space-evenly;
 }
 
-li{
+li {
     text-transform: uppercase;
     font-style: italic;
     font-weight: 200;
 }
 
-li:nth-of-type(1), li:nth-of-type(3){
+li:nth-of-type(1), li:nth-of-type(3) {
     font-size: var(--header-secondary);
 }
 
-li:nth-of-type(2){
+li:nth-of-type(2) {
     font-size: var(--header-main);
 }
 </style>

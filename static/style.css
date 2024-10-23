@@ -1,4 +1,4 @@
-:root{
+:root {
     view-transition-name: none;
 }
 
@@ -35,16 +35,21 @@ header nav ul {
     view-transition-name: header;
 }
 
-main{
+main {
     margin: 0 3em 0 3em;
 }
 
-a{
+a {
     color: inherit;
     font-size: inherit;
     text-decoration: inherit;
 }
 
-ul{
+ul {
     list-style: none;
+}
+
+h1 {
+    font-weight: inherit;
+    font-size: inherit;
 }
