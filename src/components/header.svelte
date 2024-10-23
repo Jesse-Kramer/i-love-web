@@ -40,7 +40,7 @@ ul {
 li {
     text-transform: uppercase;
     font-style: italic;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 li:nth-of-type(1), li:nth-of-type(3) {
