@@ -18,8 +18,12 @@
 
     /* Font-sizes */
     --normal-size: 8em;
+    --big-size: 25em;
     --header-main: 10em;
     --header-secondary: 5em;
+
+    /* Border */
+    --border-radius: 16px;
 
 }
 
@@ -29,10 +33,6 @@ body {
     width: 100%;
     font-size: var(--normal-size);
     color: var(--text-color)
-}
-
-header nav ul {
-    view-transition-name: header;
 }
 
 main {
@@ -52,4 +52,80 @@ ul {
 h1 {
     font-weight: inherit;
     font-size: inherit;
+}
+
+p {
+    font-size: var(--big-size);
+    text-transform: uppercase;
+    margin-bottom: .5em;
+}
+
+ul.qoutes li span {
+    font-size: var(--normal-size);
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+ul.qoutes li {
+    margin: 10em;
+    text-align: center;
+}
+
+ul.qoutes li:nth-of-type(1) span:nth-of-type(2) {
+    text-decoration: underline;
+}
+
+ul.qoutes li:nth-of-type(1) span:nth-of-type(4) {
+    text-decoration: line-through;
+}
+
+ul.qoutes li:nth-of-type(2) span:nth-of-type(2) {
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+/* View transitions */
+header nav ul {
+    view-transition-name: header;
+}
+
+/* Scroll driven animations */
+
+
+/* Animations */
+@keyframes fade-in {
+	to {
+		opacity: 0.2;
+	}
+}
+
+@keyframes fade-out {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes highlight {
+	50% {
+    opacity: 1;
+	}
+}
+
+@keyframes scale-up {
+	to {
+		scale: 1.5;
+	}
+}
+
+@keyframes grow {
+	0% {
+		scale: 0.5;
+		opacity: 0;
+	}
+}
+
+@keyframes fade-away {
+	100% {
+		opacity: 0;
+	}
 }
