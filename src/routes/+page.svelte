@@ -1,5 +1,6 @@
 <script>
     import Header from './../components/header.svelte';
+    import Carousel from './../components/carousel.svelte';
     import { onNavigate } from '$app/navigation';
 
     onNavigate((navigation) => {
