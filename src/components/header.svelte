@@ -1,9 +1,9 @@
 <header>
     <nav>
         <ul>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">About me</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><slot name="header-left"/></li>
+            <li><slot name="header-main"/></li>
+            <li><slot name="header-right"/></li>
         </ul>
     </nav>
     <hr>
@@ -43,7 +43,11 @@ li{
     font-weight: 200;
 }
 
-li{
+li:nth-of-type(1), li:nth-of-type(3){
     font-size: var(--header-secondary);
+}
+
+li:nth-of-type(2){
+    font-size: var(--header-main);
 }
 </style>
