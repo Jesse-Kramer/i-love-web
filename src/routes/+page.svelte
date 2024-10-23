@@ -33,13 +33,19 @@
     <section>
         <ul class="qoutes">
             <li>
-                <span>CREATIVITY HAS </span><span>NO</span><span>‎ </span><span>LIMITS</span>
+                <span>CREATIVITY HAS</span>
+                <span>NO</span>
+                <span>LIMITS</span>
             </li>
             <li>
-                <span>BUILD </span><span>YOUR</span><span>‎ DREAMS</span>
+                <span>BUILD</span>
+                <span>YOUR</span>
+                <span>DREAMS</span>
             </li>
             <li>
-                <span>LET'S </span><span>WORK </span><span>TOGETHER</span>
+                <span>LET'S</span>
+                <span>WORK</span>
+                <span>TOGETHER</span>
             </li>
         </ul>
     </section>
