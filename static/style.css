@@ -1,0 +1,36 @@
+* {
+    /* Initialize */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+
+    /* Custom properties */
+    --background-color: #080809;
+    --text-color: #ffffff;
+    --message-sender: #26252A;
+    --message-reciever: #238DFD;
+
+    /* Font-sizes */
+    --normal-size: 8em;
+    --header-main: 10em;
+    --header-secondary: 5em;
+
+}
+
+body {
+    background-color: var(--background-color);
+    height: 100%;
+    width: 100%;
+    font-size: var(--normal-size);
+    color: var(--text-color)
+}
+
+main{
+    margin: 0 3em 0 3em;
+}
+
+ul{
+    list-style: none;
+}
