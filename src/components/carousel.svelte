@@ -19,11 +19,11 @@
                 </div>
             </li>
             <li>
-                <img src="../images/covers/Hypecondriac.png" alt="Album Cover">
+                <img src="../images/covers/Hypechondriac.png" alt="Album Cover">
                 <div class="album-info">
-                    <p>HYPECONDRIAC</p>
+                    <p>HYPECHONDRIAC</p>
                     <p>BRAKENCE</p>
-                    <p>2019</p>
+                    <p>2022</p>
                 </div>
             </li>
             <li>
@@ -31,7 +31,7 @@
                 <div class="album-info">
                     <p>ICYMI</p>
                     <p>EDEN</p>
-                    <p>2021</p>
+                    <p>2022</p>
                 </div>
             </li>
             <li>
@@ -39,7 +39,7 @@
                 <div class="album-info">
                     <p>THE ALEXANDER TECHNIQUE</p>
                     <p>REX ORANGE COUNTY</p>
-                    <p>2020</p>
+                    <p>2024</p>
                 </div>
             </li>
             <li>
@@ -47,7 +47,7 @@
                 <div class="album-info">
                     <p>THE FIRST TIME</p>
                     <p>THE KID LAROI</p>
-                    <p>2021</p>
+                    <p>2023</p>
                 </div>
             </li>
             <li>
@@ -55,7 +55,7 @@
                 <div class="album-info">
                     <p>VERTIGO</p>
                     <p>EDEN</p>
-                    <p>2021</p>
+                    <p>2018</p>
                 </div>
             </li>
         </ul>
@@ -64,11 +64,14 @@
 
 <style>
     /* Carousel Section */
+    section.carousel {
+        margin-top: 10em;
+    }
+    
     section.carousel h2 {
         font-size: 8em;
         font-weight: 300;
         max-width: 450px;
-        margin-left: 1.5em;
     }
 
     /* Carousel ul styles */
@@ -91,6 +94,8 @@
         object-fit: cover;
     }
 
+    /* Carousel album styles */
+
     .album-info {
         color: white;
         padding: 20px;
@@ -112,44 +117,50 @@
         }
     }
 
-    @media (prefers-reduced-motion: no-preference) {
-        /* Set up the section's height for scrolling */
-        section.carousel {
-            height: 300vh;
-            overflow: visible;
-            view-timeline-name: --carousel-timeline;
-            view-timeline-axis: block;
-        }
+    @supports (animation-timeline: auto) {
+        @media (prefers-reduced-motion: no-preference) {
+            /* Set up the section's height for scrolling */
+            section.carousel {
+                height: 300vh;
+                overflow: visible;
+                view-timeline-name: --carousel-timeline;
+                view-timeline-axis: block;
+            }
 
-        /* Sticky Wrapper to hold the carousel in place */
-        .carousel-sticky {
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            width: 100vw;
-            overflow-x: hidden;
-        }
+            section.carousel h2 {
+                margin-bottom: -18vh;
+            }
 
-        /* Carousel ul styles */
-        section.carousel ul {
-            display: flex;
-            width: 215vmax;
-            height: 100vh;
-            will-change: transform;
-            animation: linear move forwards;
-            animation-timeline: --carousel-timeline;
-            animation-range: contain 10% contain 100%;
-            overflow: auto;
-            scroll-snap-type: none;
-        }
+            /* Sticky Wrapper to hold the carousel in place */
+            .carousel-sticky {
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                width: 100vw;
+                overflow-x: hidden;
+            }
 
-        section.carousel li {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-    }   
+            /* Carousel ul styles */
+            section.carousel ul {
+                display: flex;
+                width: 215vmax;
+                height: 100vh;
+                will-change: transform;
+                animation: linear move forwards;
+                animation-timeline: --carousel-timeline;
+                animation-range: contain 10% contain 100%;
+                overflow: auto;
+                scroll-snap-type: none;
+            }
+
+            section.carousel li {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        }   
+    }
 </style>
