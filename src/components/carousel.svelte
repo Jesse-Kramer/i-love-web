@@ -71,42 +71,18 @@
         margin-left: 1.5em;
     }
 
-    /* Set up the section's height for scrolling */
-    section.carousel {
-        height: 300vh;
-        overflow: visible;
-        view-timeline-name: --carousel-timeline;
-        view-timeline-axis: block;
-    }
-
-    /* Sticky Wrapper to hold the carousel in place */
-    .carousel-sticky {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        width: 100vw;
-        overflow-x: hidden;
-    }
-
     /* Carousel ul styles */
     section.carousel ul {
         display: flex;
-        width: 215vmax; /* Stretch horizontally to fit all items */
-        height: 100vh;
-        will-change: transform;
-        animation: linear move forwards;
-        animation-timeline: --carousel-timeline;
-        animation-range: contain 0% contain 100%;
+        overflow: scroll;
+        scroll-snap-type: x mandatory;
     }
 
     section.carousel li {
-        list-style: none;
-        flex: 0 0 30vw; /* Each item takes a portion of the viewport */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        flex: 0 0 30vw;
+        margin-block: 2em;
         text-align: center;
+        scroll-snap-align: center;
     }
 
     section.carousel li img {
@@ -135,4 +111,45 @@
             transform: translateX(calc(-100% + 100vw));
         }
     }
+
+    @media (prefers-reduced-motion: no-preference) {
+        /* Set up the section's height for scrolling */
+        section.carousel {
+            height: 300vh;
+            overflow: visible;
+            view-timeline-name: --carousel-timeline;
+            view-timeline-axis: block;
+        }
+
+        /* Sticky Wrapper to hold the carousel in place */
+        .carousel-sticky {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        /* Carousel ul styles */
+        section.carousel ul {
+            display: flex;
+            width: 215vmax;
+            height: 100vh;
+            will-change: transform;
+            animation: linear move forwards;
+            animation-timeline: --carousel-timeline;
+            animation-range: contain 10% contain 100%;
+            overflow: auto;
+            scroll-snap-type: none;
+        }
+
+        section.carousel li {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }   
 </style>
