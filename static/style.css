@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     text-transform: uppercase;
@@ -34,7 +35,8 @@ body {
     height: 100%;
     width: 100%;
     font-size: var(--normal-size);
-    color: var(--text-color)
+    color: var(--text-color);
+    overflow-x: hidden;
 }
 
 main {

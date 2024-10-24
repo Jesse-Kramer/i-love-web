@@ -68,15 +68,15 @@
         font-size: 8em;
         font-weight: 300;
         max-width: 450px;
-        margin-left: 3em;
+        margin-left: 1.5em;
     }
 
     /* Set up the section's height for scrolling */
     section.carousel {
-        height: 300vh; /* Less scrolling space, faster scrolling */
+        height: 300vh;
         overflow: visible;
         view-timeline-name: --carousel-timeline;
-        view-timeline-axis: block; /* Track vertical scrolling */
+        view-timeline-axis: block;
     }
 
     /* Sticky Wrapper to hold the carousel in place */
@@ -93,6 +93,10 @@
         display: flex;
         width: 215vmax; /* Stretch horizontally to fit all items */
         height: 100vh;
+        will-change: transform;
+        animation: linear move forwards;
+        animation-timeline: --carousel-timeline;
+        animation-range: contain 0% contain 100%;
     }
 
     section.carousel li {
@@ -128,14 +132,7 @@
     /* Scroll-driven animation */
     @keyframes move {
         to {
-            transform: translateX(calc(-100% + 100vw)); /* Horizontal movement */
+            transform: translateX(calc(-100% + 100vw));
         }
-    }
-
-    /* Faster scroll speed and early start for animation */
-    section.carousel ul {
-        animation: move linear forwards;
-        animation-timeline: --carousel-timeline;
-        animation-range: contain 10% contain 100%; /* Start animation earlier, increase speed */
     }
 </style>
