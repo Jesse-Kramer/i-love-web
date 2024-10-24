@@ -16,41 +16,46 @@
 </script>
 
 <Header>
-    <a href="/projects" slot="header-left">Projects</a>
+    <a href="/playground" slot="header-left">Playground</a>
     <a href="/" slot="header-main">About me</a>
     <a href="/contact" slot="header-right">Contact</a>
 </Header>
 
 <main>
-    <section>
-        <p>
-            <span>I create</span>
-            <span>cool stuff</span>
-            <span>with new</span>
-            <span>Technique's</span>
-        </p>
+    <section class="entry">
+        <p>I create</p>
+        <p>Cool stuff</p>
+        <p>With new</p>
+        <p>Techniques</p>
     </section>
 
     <Carousel/>
 
-    <section>
-        <ul class="qoutes">
+    <section class="qoutes">
+        <ul>
             <li>
-                <span>CREATIVITY HAS</span>
-                <span>NO</span>
-                <span>LIMITS</span>
+                <p>Creativity</p>
+                <p>has</p>
+                <p>No</p>
+                <p>limit</p>
             </li>
             <li>
-                <span>BUILD</span>
-                <span>YOUR</span>
-                <span>DREAMS</span>
-            </li>
-            <li>
-                <span>LET'S</span>
-                <span>WORK</span>
-                <span>TOGETHER</span>
+                <p>Build</p>
+                <p>your</p>
+                <p>dreams</p>
             </li>
         </ul>
+    </section>
+
+    <section class="links">
+        <a href="/playground">My projects</a>
+        <a href="/contact">Contact me</a>
+    </section>
+
+    <section class="mobile message-app">
+        <p class="incoming">Bro, I thought they taught to build mobile first. 😂</p>
+        <p class="outgoing">Uhm, yeah I did desktop first 💀, but I'm going to build the mobile version soon!📱</p>
+        <p class="status">Read</p>
     </section>
     
 </main>

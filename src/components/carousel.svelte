@@ -1,5 +1,5 @@
 <section class="carousel" id="sectionCarousel" data-scroll-speed="2">
-    <h2>Favourite Music</h2>
+    <h4>Favourite Music</h4>
     <div class="carousel-sticky">
         <ul>
             <li>
@@ -68,7 +68,7 @@
         margin-top: 10em;
     }
     
-    section.carousel h2 {
+    section.carousel h4 {
         font-size: 8em;
         font-weight: 300;
         max-width: 450px;
@@ -127,7 +127,7 @@
                 view-timeline-axis: block;
             }
 
-            section.carousel h2 {
+            section.carousel h4 {
                 margin-bottom: -18vh;
             }
 

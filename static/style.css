@@ -16,17 +16,13 @@
     /* Custom properties */
     --background-color: #080809;
     --text-color: #ffffff;
-    --message-sender: #26252A;
-    --message-reciever: #238DFD;
 
     /* Font-sizes */
     --normal-size: 8em;
     --big-size: 25em;
+    --small-size: 16px;
     --header-main: 10em;
     --header-secondary: 5em;
-
-    /* Border */
-    --border-radius: 16px;
 
 }
 
@@ -58,78 +54,173 @@ h1 {
     font-size: inherit;
 }
 
-p {
-    font-size: var(--big-size);
-    text-transform: uppercase;
-    margin-bottom: .5em;
-}
-
-ul.qoutes li span {
-    font-size: var(--normal-size);
-    text-transform: uppercase;
-    font-weight: 200;
-}
-
-ul.qoutes li {
-    margin: 10em;
-    text-align: center;
-}
-
-ul.qoutes li:nth-of-type(1) span:nth-of-type(2) {
+h2 {
+    font-size: var(--header-secondary);
+    font-weight: 400;
     text-decoration: underline;
 }
 
-ul.qoutes li:nth-of-type(1) span:nth-of-type(4) {
+p {
+    font-size: var(--big-size);
+    text-transform: uppercase;
+}
+
+/* Paragraph */
+section {
+    animation-name: fade-in;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+}
+
+/* Qoutes */
+section.qoutes {
+    margin-bottom: 40em;
+}
+
+section.qoutes ul li {
+    margin-bottom: 10em;
+}
+
+section.qoutes ul li:nth-of-type(1) p:nth-of-type(3) {
+    text-decoration: underline;
+}
+
+section.qoutes ul li:nth-of-type(1) p:nth-of-type(4) {
     text-decoration: line-through;
 }
 
-ul.qoutes li:nth-of-type(2) span:nth-of-type(2) {
+section.qoutes ul li:nth-of-type(2) p:nth-of-type(2) {
     text-decoration: underline;
     font-weight: 500;
 }
 
+/* links */
+section.links {
+    font-size: var(--normal-size);
+    text-transform: uppercase;
+    text-decoration: underline;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Message app */
+section.message-app {
+    display: flex;
+    max-width: 380px;
+    flex-direction: column;
+    gap: var(--small-size);
+    margin: 40em auto 20em auto;
+}
+
+section.message-app p {
+    font-size: var(--small-size);
+    font-weight: 300;
+    text-transform: none;
+    border-radius: var(--small-size);
+    padding: var(--small-size);
+    max-width: 280px;
+    height: auto;
+}
+
+section.message-app p a {
+    font-size: var(--small-size);
+    font-weight: 300;
+    text-transform: none;
+    text-decoration: underline;
+}
+
+section.message-app p.incoming{
+    background-color: #26252A;
+    float: left;
+    align-self: flex-start
+}
+
+section.message-app p.outgoing{
+    background-color: #238DFD;
+    align-self: flex-end
+}
+
+section.message-app p.status{
+    align-self: flex-end;
+    padding: unset;
+}
+
+section.mobile {
+    display: none;
+}
+
 /* View transitions */
-header nav ul {
-    view-transition-name: header;
+@supports (view-transition-name: header) {
+    @media (prefers-reduced-motion: no-preference) {
+        header nav ul {
+            view-transition-name: header;
+        }
+        
+    }
 }
 
 /* Scroll driven animations */
+@supports (animation-timeline: auto) {
+    @media (prefers-reduced-motion: no-preference) {
+        section.entry > p {
+            animation: appear linear forwards;
+            animation-timeline: view();
+            animation-range-start: -10%;
+            animation-range-end: 80%;
+        }
 
+        section.qoutes ul li p {
+            animation: fade-in linear forwards;
+            animation-timeline: view();
+            animation-range-start: entry;
+            animation-range-end: contain;
+        }
+
+        section.projects p {
+            animation: fade-in linear forwards;
+            animation-timeline: view();
+            animation-range: entry;
+        }
+
+        section.message-app > p:not(:last-child){
+            animation: pop-up linear forwards;
+            animation-delay: 5s;
+            animation-timeline: view();
+            animation-range: entry;
+        }
+    }
+}
 
 /* Animations */
 @keyframes fade-in {
+    from {
+        opacity: 0;
+    }
 	to {
-		opacity: 0.2;
+		opacity: 1;
 	}
 }
 
-@keyframes fade-out {
-	to {
-		opacity: 0;
-	}
+@keyframes appear {
+    10%, 40% {scale: .3; opacity: 0;}
+    100% {scale: 1; opacity: 1;}
 }
 
-@keyframes highlight {
-	50% {
-    opacity: 1;
-	}
+@keyframes pop-up {
+    0% {scale: .3;}
+    30% {scale: .5;}
+    60% {scale: 1.5;}
+    100% {scale: 1;}
 }
 
-@keyframes scale-up {
-	to {
-		scale: 1.5;
-	}
-}
+/* Media queries */
+@media screen and (max-width: 1300px) {
+    header, nav, body main > section:not(.mobile) {
+        display: none!important;
+    }
 
-@keyframes grow {
-	0% {
-		scale: 0.5;
-		opacity: 0;
-	}
-}
+    main section.mobile {
+        display: flex;
+    }
 
-@keyframes fade-away {
-	100% {
-		opacity: 0;
-	}
 }
