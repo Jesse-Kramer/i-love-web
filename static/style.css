@@ -9,6 +9,8 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     font-size: 10px;
+    text-transform: uppercase;
+    scroll-behavior: smooth;
 
     /* Custom properties */
     --background-color: #080809;

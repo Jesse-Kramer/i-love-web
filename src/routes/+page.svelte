@@ -22,14 +22,17 @@
 </Header>
 
 <main>
-    <section>
+    <!-- <section>
         <p>
             <span>I create</span>
             <span>cool stuff</span>
             <span>with new</span>
             <span>Technique's</span>
         </p>
-    </section>
+    </section> -->
+
+    <Carousel/>
+
     <section>
         <ul class="qoutes">
             <li>
