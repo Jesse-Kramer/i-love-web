@@ -67,11 +67,6 @@
     <p>More soon</p>
   </section>
 
-  <section class="mobile message-app">
-    <p class="incoming">Bro, I thought they taught to build mobile first. 😂</p>
-    <p class="outgoing">Uhm, yeah I did desktop first 💀, but I'm going to build the mobile version soon!📱</p>
-    <p class="status">Read</p>
-  </section>
 </main>
 
 <style>
@@ -102,5 +97,22 @@
 
   section.progress p {
     font-size: 5em;
+  }
+
+  @media screen and (max-width: 800px) {
+      section.stuff h2 { 
+        font-size: 2.5em;
+      }
+
+      section article h3, section article a {
+        font-size: 1em;
+      }
+  }
+
+  @media screen and (max-width: 500px) {
+    .stuff {
+      flex-direction: column;
+      align-content: space-around;
+    }
   }
 </style>

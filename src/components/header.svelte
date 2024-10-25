@@ -22,12 +22,6 @@ header {
 nav {
     margin-bottom: 1.5em;
 }
-
-a {
-    color: inherit;
-    font-size: inherit;
-    text-decoration: inherit;
-}
     
 ul {
     display: flex;
@@ -49,5 +43,12 @@ li:nth-of-type(1), li:nth-of-type(3) {
 
 li:nth-of-type(2) {
     font-size: var(--header-main);
+}
+
+@media screen and (max-width: 1300px) {
+    header {
+        --header-main: 2.5em;
+        --header-secondary: 1.25em;
+    }
 }
 </style>

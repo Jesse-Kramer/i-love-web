@@ -110,6 +110,88 @@
         font-size: 30px;
     }
 
+    /* Mediq queries */
+    @media screen and (max-width: 1750px) {
+        .album-info p {
+            font-size: 22.5px;
+        }
+        section.carousel li img {
+            height: 400px;
+            width: 400px;
+            object-fit: cover;
+        }
+    }
+
+    @media screen and (max-width: 1400px) {
+        .album-info p {
+            font-size: 15px;
+        }
+        section.carousel li img {
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+        }
+    }
+
+    @media screen and (max-width: 1100px) {
+        .album-info p {
+            font-size: 15px;
+        }
+        section.carousel li img {
+            height: 250px;
+            width: 250px;
+            object-fit: cover;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .album-info p {
+            font-size: 10px;
+            letter-spacing: normal;
+        }
+        section.carousel li img {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+        }
+
+        section.carousel h4{
+            font-size: 4em;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .album-info p {
+            font-size: 10px;
+        }
+        section.carousel li img {
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .album-info p {
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: none;
+        }
+        section.carousel li img {
+            height: 125px;
+            width: 125px;
+            object-fit: cover;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        section.carousel li img {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+        }
+    }
+
     /* Scroll-driven animation */
     @keyframes move {
         to {
@@ -161,6 +243,36 @@
                 align-items: center;
                 text-align: center;
             }
-        }   
+
+            @media screen and (max-width: 900px) {
+                section.carousel ul {
+                    width: 180vmax;
+                }
+            }
+
+            @media screen and (max-width: 800px) {
+                section.carousel ul {
+                    width: 160vmax;
+                }
+            }
+
+            @media screen and (max-width: 700px) {
+                section.carousel ul {
+                    width: 140vmax;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                section.carousel ul {
+                    width: 120vmax;
+                }
+            }
+
+            @media screen and (max-width: 500px) {
+                section.carousel ul {
+                    width: 100vmax;
+                }
+            }
+        }
     }
 </style>

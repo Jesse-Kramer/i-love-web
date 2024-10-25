@@ -52,12 +52,6 @@
         <a href="/contact">Contact me</a>
     </section>
 
-    <section class="mobile message-app">
-        <p class="incoming">Bro, I thought they taught to build mobile first. 😂</p>
-        <p class="outgoing">Uhm, yeah I did desktop first 💀, but I'm going to build the mobile version soon!📱</p>
-        <p class="status">Read</p>
-    </section>
-    
 </main>
 
 <style>

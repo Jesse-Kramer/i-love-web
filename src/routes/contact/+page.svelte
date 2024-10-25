@@ -33,15 +33,17 @@
     <p class="status">Read</p>
   </section>
 
-  <section class="mobile message-app">
-    <p class="incoming">Bro, I thought they taught to build mobile first. 😂</p>
-    <p class="outgoing">Uhm, yeah I did desktop first 💀, but I'm going to build the mobile version soon!📱</p>
-    <p class="status">Read</p>
-</section>
 </main>
 
 <style>
   section.entry p:nth-of-type(3) {
     text-decoration: underline;
   }  
+
+  @media screen and (max-width: 800px) {
+      section.message-app { 
+        margin: 20em auto 10em auto;
+      }
+  }
+
 </style>
