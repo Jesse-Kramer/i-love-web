@@ -71,7 +71,6 @@
     section.carousel h4 {
         font-size: 8em;
         font-weight: 300;
-        max-width: 450px;
     }
 
     /* Carousel ul styles */
@@ -207,10 +206,6 @@
                 overflow: visible;
                 view-timeline-name: --carousel-timeline;
                 view-timeline-axis: block;
-            }
-
-            section.carousel h4 {
-                margin-bottom: -18vh;
             }
 
             /* Sticky Wrapper to hold the carousel in place */
