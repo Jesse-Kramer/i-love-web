@@ -1,76 +1,90 @@
 <script>
   import Header from '../../components/header.svelte';
-  import { onNavigate } from '$app/navigation';
+  // View-transitions
+  import ViewTransition  from '../../lib/ViewTransition.svelte';
 
-    onNavigate((navigation) => {
-        if (!document.startViewTransition) return;
+  const resources = [
+    {
+      category: "Notes",
+      items: [
+        {
+          title: "I Love Web",
+          link: "https://github.com/Jesse-Kramer/i-love-web/wiki/We-%E2%9D%A4%EF%B8%8F-web#vasilis-van-gemert---13-09-2024",
+          description: "Vasilis van Gemert - 13-09-2024",
+        },
+        {
+          title: "I Love Web",
+          link: "https://github.com/Jesse-Kramer/i-love-web/wiki/We-%E2%9D%A4%EF%B8%8F-web#dion-pieters---18-10-2024",
+          description: "Dion Pieters - 18-10-2024",
+        },
+      ],
+    },
+    {
+      category: "Projects",
+      items: [
+        {
+          title: "Personal project",
+          link: "https://jesse-kramer.nl/",
+          description: "Profile card & portfolio - N/A",
+        },
+        {
+          title: "School project",
+          link: "https://github.com/christoph3r3w/pleasurable-ui",
+          description: "Redpers - Sprint 11",
+        },
+        {
+          title: "School project",
+          link: "https://github.com/Jesse-Kramer/tumi-mundo",
+          description: "Tumi Mundo - Actively working on",
+        },
+      ],
+    },
+    {
+      category: "Other",
+      items: [
+        {
+          title: "N/A",
+          link: "/",
+          description: "N/A",
+        },
+      ],
+    },
+  ];
 
-        return new Promise((resolve) => {
-            document.startViewTransition(async () => {
-                resolve();
-                await navigation.complete;
-            });
-        });
-    });
 </script>
 
-<Header>
-  <a href="./" slot="header-left">About me</a>
-  <a href="/playground" slot="header-main">Playground</a>
-  <a href="/contact" slot="header-right">Contact</a>
-</Header>
-
-<main>
-  <section class="stuff">
-    <article>
-      <h2>Notes</h2>
-      <ul>
-        <li>
-          <h3>I Love Web</h3>
-          <a href="https://github.com/Jesse-Kramer/i-love-web/wiki/We-%E2%9D%A4%EF%B8%8F-web#vasilis-van-gemert---13-09-2024" target="_blank">Vasilis van Gemert - 13-09-2024</a>
-        </li>
+<ViewTransition>
+  <Header>
+    <a href="./" slot="header-left">About me</a>
+    <a href="/playground" slot="header-main">Playground</a>
+    <a href="/contact" slot="header-right">Contact</a>
+  </Header>
   
-        <li>
-          <h3>I Love Web</h3>
-          <a href="https://github.com/Jesse-Kramer/i-love-web/wiki/We-%E2%9D%A4%EF%B8%8F-web#dion-pieters---18-10-2024" target="_blank">Dion Pieters - 18-10-2024</a>
-        </li>
-      </ul>
-    </article>
-    <article>
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <h3>Personal project</h3>
-          <a href="https://jesse-kramer.nl/" target="_blank">Profile card & portfolio - N/A</a>
-        </li>
-        <li>
-          <h3>School project</h3>
-          <a href="https://github.com/christoph3r3w/pleasurable-ui" target="_blank">Redpers - Sprint 11</a>
-        </li>
-        <li>
-          <h3>School project</h3>
-          <a href="https://github.com/Jesse-Kramer/tumi-mundo" target="_blank">Tumi Mundo - Actively working on</a>
-        </li>
-      </ul>
-    </article>
-    <article>
-      <h2>Other</h2>
-      <ul>
-        <li>
-          <h3>N/A</h3>
-          <a href="/">N/A</a>
-        </li>
-      </ul>
-    </article>
-  </section>
-  <section class="progress">
-    <p>More soon</p>
-  </section>
-
-</main>
+  <main>
+    <section class="resources-section">
+      {#each resources as resource}
+        <article>
+          <h2>{resource.category}</h2>
+          <ul>
+            {#each resource.items as item}
+              <li>
+                <h3>{item.title}</h3>
+                <a href={item.link} target="_blank">{item.description}</a>
+              </li>
+            {/each}
+          </ul>
+        </article>
+      {/each}
+    </section>  
+    <section class="progress-section">
+      <p>More soon</p>
+    </section>
+  
+  </main>
+</ViewTransition>
 
 <style>
-  .stuff {
+  .resources-section {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -78,7 +92,7 @@
     align-items: flex-start;
     justify-content: space-evenly;
   }
-  section.stuff h2 {
+  section.resources-section h2 {
     margin-bottom: .5em;
   }
 
@@ -90,17 +104,17 @@
     font-size: 1.5em;
   }
 
-  section.progress {
+  section.progress-section {
     margin-top: 15em;
     text-align: center;
   }
 
-  section.progress p {
+  section.progress-section p {
     font-size: 5em;
   }
 
   @media screen and (max-width: 800px) {
-      section.stuff h2 { 
+      section.resources-section h2 { 
         font-size: 2.5em;
       }
 
@@ -110,7 +124,7 @@
   }
 
   @media screen and (max-width: 500px) {
-    .stuff {
+    .resources-section {
       flex-direction: column;
       align-content: space-around;
     }

@@ -1,63 +1,29 @@
+<script>
+    const favouriteMusic = [
+        { title: "Apricot Princess", artist: "Rex Orange County", year: 2017, coverImage: "../images/covers/Apricot Princess.png" },
+        { title: "Blonde", artist: "Frank Ocean", year: 2016, coverImage: "../images/covers/Blonde.png" },
+        { title: "Hypechondriac", artist: "Brakence", year: 2022, coverImage: "../images/covers/Hypechondriac.png" },
+        { title: "Icymi", artist: "Eden", year: 2022, coverImage: "../images/covers/ICYMI.png" },
+        { title: "The Alexander Technique", artist: "Rex Orange County", year: 2024, coverImage: "../images/covers/The Alexander Technique.png" },
+        { title: "The First Time", artist: "The Kid Laroi", year: 2023, coverImage: "../images/covers/The First Time.png" },
+        { title: "Vertigo", artist: "Eden", year: 2018, coverImage: "../images/covers/Vertigo.png" }
+    ];
+</script>
+
 <section class="carousel" id="sectionCarousel" data-scroll-speed="2">
     <h4>Favourite Music</h4>
     <div class="carousel-sticky">
         <ul>
+            {#each favouriteMusic as album}
             <li>
-                <img src="../images/covers/Apricot Princess.png" alt="Album Cover">
+                <img src={album.coverImage} alt="Album Cover">
                 <div class="album-info">
-                    <p>APRICOT PRINCESS</p>
-                    <p>REX ORANGE COUNTY</p>
-                    <p>2017</p>
+                    <p>{album.title}</p>
+                    <p>{album.artist}</p>
+                    <p>{album.year}</p>
                 </div>
             </li>
-            <li>
-                <img src="../images/covers/Blonde.png" alt="Album Cover">
-                <div class="album-info">
-                    <p>BLONDE</p>
-                    <p>FRANK OCEAN</p>
-                    <p>2016</p>
-                </div>
-            </li>
-            <li>
-                <img src="../images/covers/Hypechondriac.png" alt="Album Cover">
-                <div class="album-info">
-                    <p>HYPECHONDRIAC</p>
-                    <p>BRAKENCE</p>
-                    <p>2022</p>
-                </div>
-            </li>
-            <li>
-                <img src="../images/covers/ICYMI.png" alt="Album Cover">
-                <div class="album-info">
-                    <p>ICYMI</p>
-                    <p>EDEN</p>
-                    <p>2022</p>
-                </div>
-            </li>
-            <li>
-                <img src="../images/covers/The Alexander Technique.png" alt="Album Cover">
-                <div class="album-info">
-                    <p>THE ALEXANDER TECHNIQUE</p>
-                    <p>REX ORANGE COUNTY</p>
-                    <p>2024</p>
-                </div>
-            </li>
-            <li>
-                <img src="../images/covers/The First Time.png" alt="Album Cover">
-                <div class="album-info">
-                    <p>THE FIRST TIME</p>
-                    <p>THE KID LAROI</p>
-                    <p>2023</p>
-                </div>
-            </li>
-            <li>
-                <img src="../images/covers/Vertigo.png" alt="Album Cover">
-                <div class="album-info">
-                    <p>VERTIGO</p>
-                    <p>EDEN</p>
-                    <p>2018</p>
-                </div>
-            </li>
+            {/each}
         </ul>
     </div>
 </section>

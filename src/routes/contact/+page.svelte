@@ -1,49 +1,40 @@
 <script>
+  // Components
   import Header from '../../components/header.svelte';
+  import MessageApp from '../../components/message-app.svelte';
 
-  import { onNavigate } from '$app/navigation';
+  const messages = [
+    { type: 'incoming', text: 'Hi, someone wants your contact info. Can you send me your e-mail real quick?' },
+    { type: 'outgoing', text: 'Yeah sure, I\'m available for work from the 1st of November. My e-mail is <a href="mailto:jesse-kramer@hva.nl">jesse.kramer@hva.nl</a>' },
+    { type: 'status', text: 'Read' }
+  ];
 
-    onNavigate((navigation) => {
-        if (!document.startViewTransition) return;
-
-        return new Promise((resolve) => {
-            document.startViewTransition(async () => {
-                resolve();
-                await navigation.complete;
-            });
-        });
-    });
+  // View-transitions
+  import ViewTransition  from '../../lib/ViewTransition.svelte';
 </script>
 
-<Header>
-  <a href="./" slot="header-left">About me</a>
-  <a href="/contact" slot="header-main">Contact</a>
-  <a href="/playground" slot="header-right">Playground</a>
-</Header>
+<ViewTransition>
+  <Header>
+    <a href="./" slot="header-left">About me</a>
+    <a href="/contact" slot="header-main">Contact</a>
+    <a href="/playground" slot="header-right">Playground</a>
+  </Header>
+  
+  <main>
+    <section class="page-intro">
+      <p>Let's</p>
+      <p>Work</p>
+      <p>Together</p>
+    </section>
+  
+    <MessageApp {messages} />
+  </main>
+</ViewTransition>
 
-<main>
-  <section class="entry">
-    <p>Let's</p>
-    <p>Work</p>
-    <p>Together</p>
-  </section>
-  <section class="message-app">
-    <p class="incoming">Hi, someone wants your contact info. Can you send me your e-mail real quick?</p>
-    <p class="outgoing">Yeah sure, I'm available for work from the 1st of november. My e-mail is <a href="mailto:jesse-kramer@hva.nl">jesse.kramer@hva.nl</a></p>
-    <p class="status">Read</p>
-  </section>
-
-</main>
 
 <style>
-  section.entry p:nth-of-type(3) {
+  section.page-intro p:nth-of-type(3) {
     text-decoration: underline;
-  }  
-
-  @media screen and (max-width: 800px) {
-      section.message-app { 
-        margin: 20em auto 10em auto;
-      }
   }
 
 </style>
